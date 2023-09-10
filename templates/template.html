@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <link rel="stylesheet" type="text/css" href="../static/styles/styling.css">
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+<!--Get your code at fontawesome.com-->
+  <title>Vitej</title>
+</head>
+
+<body>
+
+<i class="fa-solid fa-right-to-bracket"></i> <!--Login icon-->
+<i class="fa-solid fa-right-from-bracket"></i> <!--Logout icon-->
+<i class="fa-solid fa-house"></i> <!--Hlavni_stranka icon-->
+<i class="fa-solid fa-user"></i> <!--Profile icon-->
+
+
+  <!--Sidebar-->
+<div class="sidebar">
+  <div id="time">
+      <script>
+      var datetime = new Date();
+      console.log(datetime);
+      document.getElementById("time").textContent = datetime; //zobrazi datum a cas
+      function refreshTime() { //obnova casu
+      const timeDisplay = document.getElementById("time");
+      const dateString = new Date().toLocaleString();
+      const formattedString = dateString.replace(", ", " - ");
+      timeDisplay.textContent = formattedString;
+      }
+      setInterval(refreshTime, 100);
+      </script>
+  </div>
+  <ul>
+    <li><a href="/" class="mainpage">Hlavní stránka</a></li>
+    <li><a href="profil" class="profil_button">Profil</a></li>
+    <li><a href="mysql" class="mysql_button">Mysql</a></li>
+    <li><a href="mysql_redis" class="redis_button">Redis</a></li>
+    <li><a href="mongo_db" class="mongo_form_button">Mongo Reg</a></li>
+    <li><a href="mongo_data" class="mongo_button">Mongo Data</a></li>
+    <li><a href="neo4j" class="neo_button">Neo4j</a></li>
+    <li><a href="logout" class="logout_button">Odhlásit</a></li>
+  </ul>
+</div>
+
+<!--Stranka-->
+<div class="stranka">
+  <h1>Vítej v seminární práci</h1>
+  <p>Ahoj, toto je náš projekt, který jsme připravili na předmět NoSQL<br>
+    Ahoj, toto je náš projekt, který jsme připravili na předmět NoSQL<br>
+    Ahoj, toto je náš projekt, který jsme připravili na předmět NoSQL<br>
+    Ahoj, toto je náš projekt, který jsme připravili na předmět NoSQL<br>
+    Ahoj, toto je náš projekt, který jsme připravili na předmět NoSQL<br>
+    Ahoj, toto je náš projekt, který jsme připravili na předmět NoSQL<br>
+    Ahoj, toto je náš projekt, který jsme připravili na předmět NoSQL<br></p>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styling.css') }}">
+  <title>Přihlášení</title>
+</head>
+
+<body>
+ <!--Sidebar-->
+ <div class="sidebar">
+  <div id="time">
+      <script>
+      var datetime = new Date();
+      console.log(datetime);
+      document.getElementById("time").textContent = datetime; //zobrazi datum a cas
+      function refreshTime() { //obnova casu
+      const timeDisplay = document.getElementById("time");
+      const dateString = new Date().toLocaleString();
+      const formattedString = dateString.replace(", ", " - ");
+      timeDisplay.textContent = formattedString;
+      }
+      setInterval(refreshTime, 100);
+      </script>
+  </div>
+  <ul>
+    <li><a href="login" class="login_button">Přihlášení</a></li>
+    <li><a href="register" class="register_button">Registrace</a></li>
+    {% if current_user.is_authenticated %}
+    <li><a href="/" class="mainpage">Hlavní stránka</a></li>
+    <li><a href="profil" class="profil_button">Profil</a></li>
+    <li><a href="mysql" class="mysql_button">Mysql</a></li>
+    <li><a href="mysql_redis" class="redis_button">Redis</a></li>
+    <li><a href="mongo_db" class="mongo_form_button">Mongo Reg</a></li>
+    <li><a href="mongo_data" class="mongo_button">Mongo Data</a></li>
+    <li><a href="neo4j" class="neo_button">Neo4j</a></li>
+    <li><a href="logout" class="logout_button">Odhlásit</a></li>
+    {% endif %}
+  </ul>
+</div>
+
+  <div class="stranka">
+    <h1>Přihlášení</h1>
+    <div class="login_form">
+      <form action="{{url_for('login')}}" method="POST">
+        {% for mesg in get_flashed_messages() %}
+        <h3>{{ mesg }}</h3>
+        {% endfor %}
+        <hr>
+        <label>Uživatelské jméno </label>
+        <input type="text" placeholder="Uživatelské jméno" name="username" required>
+        <label>Heslo </label>
+        <input type="password" placeholder="Heslo" name="password" required>
+        <br>
+        <button type="submit">Přihlásit</button>
+        <hr>
+      </form>
+    </div>
+  </div>
+  </form>
+</body>
+
+</html>

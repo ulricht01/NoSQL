@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Rubik+Microbe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    overflow: hidden;
+    margin: 0;
+
+}
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: url("images/background.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.sidebar {
+    position: relative;
+    left: 4%;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 40px;
+    display: inline-block;
+    height: 60px;
+    background-color: lightskyblue;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.sidebar ul{
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.sidebar ul li{
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    margin-right: 15px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: 0.3s;
+}
+
+.sidebar ul li:hover{
+background-color: #20b2aa;
+color: white;
+transition: 0.3s;
+border-radius: 30px;
+}
+
+
+.sidebar ul li a{
+    position: relative;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 22px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: 0;
+    bottom: 6px;
+    font-size: 20px;
+    font-family: 'Anton', sans-serif;
+}
+
+.sidebar ul li a:hover{
+    color: white;
+    font-weight: 400;
+}
+
+#time{
+    position: relative;
+    float: left;
+    margin-left: 5px;
+    padding-top: 16px;
+    padding-bottom: 22px;
+    width: 250px;
+    font-size: 20px;
+    font-family: 'Anton', sans-serif;
+    color: #184870;
+}
+
+
+.stranka {
+    text-align: center;
+    display: block;
+}
+
+.title_redis{
+    position: relative;
+    left: 0%;
+    margin-left: 0%;
+    margin-top: 50px;
+    margin-bottom: 0px;
+    text-align: center;
+    color: #ccdafe;
+    font-size: 70px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+p {
+    font-size: 25px;
+    display: block;
+    position: relative;
+    text-align: center;
+}
+
+
+h1 {
+    color: #ccdafe;
+    font-size: 70px;
+    text-align: center;
+    margin-left: 0%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: 'Bebas Neue', cursive;
+}
+
+h2 {
+    color: black;
+    -webkit-text-stroke: 2px rgb(241, 15, 15);
+    text-align: center;
+}
+
+
+h3 {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: red;
+    -webkit-text-stroke: 1px rgb(241, 15, 15);
+    font-size: 25px;
+    font-family: fantasy;
+}
+
+hr {
+    border-style: groove;
+    border-width: 1px;
+    color: aliceblue;
+}
+
+.login_form {
+    margin-top: 5%;
+    text-align: center;
+    position: relative;
+}
+
+.login_form label {
+    color: aliceblue;
+    font-size: 24px;
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+
+}
+
+.login_form input {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 3%;
+    margin-right: 5%;
+    font-size: 20px;
+    border-radius: 50px;
+}
+
+.login_form button {
+    font-size: 18px;
+    border-width: 8px;
+    border-color: aliceblue;
+    border-radius: 45px;
+    padding: 8px;
+    transition: 0.5s;
+    font-family: 'Nunito', sans-serif;
+}
+
+.login_form button:hover {
+    background: lightseagreen;
+    transition: 0.5s;
+}
+
+.register_form {
+    margin-top: 5%;
+    text-align: center;
+    position: relative;
+    left: 5%;
+
+}
+
+.register_form label {
+    position: relative;
+    right: 100px;
+    color: aliceblue;
+    font-size: 24px;
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+}
+
+.register_form input {
+    position: relative;
+    right: 100px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-right: 50px;
+    font-size: 20px;
+    border-radius: 50px;
+}
+
+.register_form button {
+    position: relative;
+    right: 100px;
+    font-size: 18px;
+    border-width: 8px;
+    border-color: aliceblue;
+    border-radius: 45px;
+    padding: 8px;
+    transition: 0.5s;
+    font-family: 'Nunito', sans-serif;
+}
+
+.register_form button:hover {
+    background: lightseagreen;
+    transition: 0.5s;
+
+}
+
+.register_mongo_form {
+    margin-top: 50px;
+    text-align: center;
+    position: relative;
+    display: block;
+    align-items: center;
+    float: left;
+    left: 36%;
+    width: 500px;
+}
+
+.register_mongo_form p{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.register_mongo_form label{
+    position: relative;
+    float: left;
+}
+
+.register_mongo_form .fix{
+    position: relative;
+    left: 0%;
+}
+
+.register_mongo_form label {
+    position: relative;
+    color: aliceblue;
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.register_mongo_form input {
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    margin-right: 5%;
+    font-size: 20px;
+    border-radius: 50px;
+}
+
+.register_mongo_form button {
+    font-size: 18px;
+    border-width: 8px;
+    border-color: aliceblue;
+    border-radius: 45px;
+    padding: 8px;
+    transition: 0.5s;
+    font-family: 'Nunito', sans-serif;
+}
+
+.register_mongo_form button:hover {
+    background: lightseagreen;
+    transition: 0.5s;
+
+}
+
+.change_mongo_form {
+    margin-bottom: 5%;
+    text-align: center;
+    position: relative;
+}
+
+.change_mongo_form label {
+    position: relative;
+    top: 10px;
+    color: aliceblue;
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+
+.change_mongo_form input {
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 3%;
+    margin-right: 5%;
+    font-size: 20px;
+    border-radius: 50px;
+}
+
+.change_mongo_form button {
+    font-size: 18px;
+    border-width: 8px;
+    border-color: aliceblue;
+    border-radius: 45px;
+    padding: 8px;
+    transition: 0.5s;
+    font-family: 'Nunito', sans-serif;
+}
+
+.change_mongo_form button:hover {
+    background: lightseagreen;
+    transition: 0.5s;
+
+}
+
+.users {
+    position: relative;
+    color: aliceblue;
+    flex: 20%;
+    padding: 10px;
+    inline-size: 100%;
+    border-color: rgb(255, 255, 255);
+    border-width: 1px;
+    margin: 0;
+    text-align: center;
+    align-items: center;
+    left: 20%;
+    margin-top: 30px;
+}
+
+.users p {
+    position: relative;
+    text-align: center;
+    display: block;
+    margin-left: 85px;
+    margin-top: -10px;
+    float: left;
+    color: white;
+    font-size: 25px;
+    font-family: 'Anton', sans-serif, cursive;
+}
+
+.users_table{
+    position: relative;
+    text-align: center;
+    color: white;
+    font-family: 'Anton', sans-serif, cursive;
+    font-size: 20px;
+}
+
+.users_redis{
+    position: relative;
+    text-align: center;
+    margin-top: 17px;
+    margin-bottom: 20px;
+    left: 41%;
+    border-width: 1px;
+    border-bottom: 1px solid white;
+    width: 350px;
+    color: white;
+    font-family: 'Anton', sans-serif, cursive;
+    font-size: 20px;
+}
+
+.users_redis p{
+    position: relative;
+    text-align: center;
+    display: block;
+    margin-left: 85px;
+    margin-top: 0px;
+    float: left;
+    color: white;
+    font-size: 25px;
+    font-family: 'Anton', sans-serif, cursive;
+}
+
+.users_mongo_data{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.udaje_profil .udaje p {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-family: 'Anton', sans-serif;
+    position: relative;
+    padding-right: 50px;
+}
+
+.udaje_profil {
+    position: absolute;
+    display: inline-block;
+    left: 13.9%;
+    padding-left: 150px;
+    padding-right: 150px;
+    background-color: lightblue;
+    color: #184870;
+    border-radius: 50px;
+    box-shadow: 3px 5px 5px 3px black;
+    padding-top: 15px;
+}
+
+.udaje_profil .udaje {
+    padding-right: 500px;
+    margin-left: 15px;
+    display: inline-block;
+    margin-top: 55px;
+    position: relative;
+}
+
+.udaje_profil .profile-img img {
+    width: 220px;
+    height: 220px;
+}
+
+.udaje_profil .profile-img {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    margin-right: 50px;
+    margin-left: -50px;
+    float: left;
+    margin-top: 20px;
+}
+
+.edit_button {
+    text-align: center;
+}
+
+.edit_button button {
+    top: 2%;
+    font-size: 18px;
+    border-width: 8px;
+    border-color: aliceblue;
+    border-radius: 45px;
+    padding: 8px;
+    transition: 0.5s;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+.edit_button button:hover {
+    background: lightseagreen;
+    transition: 0.5s;
+
+}

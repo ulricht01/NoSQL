@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/styling.css') }}">
+    <title>Profil</title>
+</head>
+
+<body>
+<!--Sidebar-->
+<div class="sidebar">
+    <div id="time">
+        <script>
+        var datetime = new Date();
+        console.log(datetime);
+        document.getElementById("time").textContent = datetime; //zobrazi datum a cas
+        function refreshTime() { //obnova casu
+        const timeDisplay = document.getElementById("time");
+        const dateString = new Date().toLocaleString();
+        const formattedString = dateString.replace(", ", " - ");
+        timeDisplay.textContent = formattedString;
+        }
+        setInterval(refreshTime, 100);
+        </script>
+    </div>
+    <ul>
+      <li><a href="/" class="mainpage">Hlavní stránka</a></li>
+      <li><a href="profil" class="profil_button">Profil</a></li>
+      <li><a href="mysql" class="mysql_button">Mysql</a></li>
+      <li><a href="mysql_redis" class="redis_button">Redis</a></li>
+      <li><a href="mongo_db" class="mongo_form_button">Mongo Reg</a></li>
+      <li><a href="mongo_data" class="mongo_button">Mongo Data</a></li>
+      <li><a href="neo4j" class="neo_button">Neo4j</a></li>
+      <li><a href="logout" class="logout_button">Odhlásit</a></li>
+    </ul>
+  </div>
+
+    <div class="stranka">
+        {% block content %}
+        <h1 class="title">{% block title %} Mongo - Změna Kontaktu {% endblock %}</h1>
+        <div class="content">
+            {% for kontakty in kontakt %}
+            <div class="users_mongo_data">
+                <p><b>username:</b> {{kontakty.username}} | <b>Telefon:</b> {{kontakty.telefon}} | <b>Město:</b>
+                    {{kontakty.mesto}} | <b>Ulice:</b>
+                    {{kontakty.ulice}} |
+                    <b>Číslo popisné:</b> {{kontakty.cislo_popisne}}
+                </p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endblock %}
+
+        <script>
+            function myFunction() {
+                var x = document.getElementById("change_mongo_form");
+                var btn = document.getElementById("edit_btn");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                    btn.textContent = 'Skrýt';
+                } else {
+                    x.style.display = "none"
+                    btn.textContent = 'Změnit Kontakt';
+                }
+            }
+        </script>
+
+
+        <div class="edit_button">
+            <div class="change_mongo_form" id="change_mongo_form">
+                <form action="{{url_for('mongo_data')}}" method="POST">
+                    {% for mesg in get_flashed_messages() %}
+                    <h3>{{ mesg }}</h3>
+                    {% endfor %}
+                    <hr>
+                    <label>Uživatelské jméno: {{current_user.username}} </label>
+                    <br>
+                    <label>Telefon </label>
+                    <input type="text" placeholder="Telefon" name="telefon" required>
+                    <label>Město </label>
+                    <input type="text" placeholder="Mesto" name="mesto" required>
+                    <br>
+                    <label>Ulice </label>
+                    <input type="text" placeholder="Ulice" name="ulice" required>
+                    <br>
+                    <label>Číslo popisné </label>
+                    <input type="text" placeholder="Číslo popisné" name="cislo_popisne" required>
+                    <br>
+                    <button type="submit">Potvrdit</button>
+                    <hr>
+                </form>
+            </div>
+            <button id="edit_btn" onclick="myFunction()">Skrýt</button>
+        </div>
+</body>
+
+
+</html>
