@@ -1,0 +1,14 @@
+#1. uvodni stranka, tam bude html formular
+#2. login bude email (html5 features)
+#3. heslo budeh heslo (html5 features)
+#4. napojte databazi (relacni, postgres, sqlite3)
+#6. session
+#5. ulozte pomoci knihovny SQL Alchemy (na flask) registrovaneho do databaze
+#7. ORM
+
+#pip freeze > requirements.txt          
+#db.kontakt.deleteMany({}) 
+#docker run --name mongodb -d -p 27017:27017 mongo
+#docker-compose up -d
+
+nefunguje Redis
